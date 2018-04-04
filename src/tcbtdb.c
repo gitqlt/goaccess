@@ -65,7 +65,7 @@ tc_db_set_path (const char *dbname, int module)
   char fname[RAND_FN];
   int cx;
 
-  /* db_path is either specified explicitly, or gets the default (pid appended) */
+  /* db_path is either specified explicitly or gets the default (pid appended) */
   if (conf.db_path != NULL)
     db_path = (char *)conf.db_path;
   else {
@@ -105,7 +105,7 @@ tc_db_rmdir()
   db_path = tc_db_set_path (NULL, 0);
   if (db_path != NULL)
     if (rmdir(db_path))
-      LOG_DEBUG (("Unable to remove custom db folder: %s\n", db_path));
+      LOG_DEBUG ("Unable to remove custom db folder: %s\n", db_path);
 }
 
 
